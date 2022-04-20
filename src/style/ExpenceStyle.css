@@ -1,0 +1,17 @@
+/* .expence_container {
+  display: flex;
+  justify-content: space-between;
+  background-color: blue;
+  padding: 2em;
+  border-radius: 1em;
+} */
+/* .expence_items {
+  display: flex;
+  gap: 2em;
+} */
+
+.expence_amount {
+}
+.date_container {
+  border-radius: 5px;
+}
