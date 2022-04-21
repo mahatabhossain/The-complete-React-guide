@@ -12,6 +12,7 @@ const ExpenseItem = ({ date, title, amount }) => {
     console.log("Button clicked and state change!!");
   };
   return (
+    
     <Card className="expence_container">
       <ExpenseDate date={date} />
 

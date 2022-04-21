@@ -1,4 +1,6 @@
+import React from "react";
 import ExpenseItem from "./components/ExpenseItem";
+import NewExpense from "./components/NewExpense";
 
 const App = () => {
   const expences = [
@@ -31,6 +33,7 @@ const App = () => {
   return (
     <div>
       <h1>Hello React</h1>
+      <NewExpense/>
       <div>
         {/*  Dynamic value passing into component */}
         {expences?.map((expence) => (
