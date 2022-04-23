@@ -30,10 +30,14 @@ const App = () => {
     },
   ];
 
+  const addExpenseHandler = (expense) => {
+    console.log("In App.js");
+    console.log(expense);
+  };
   return (
     <div>
       <h1>Hello React</h1>
-      <NewExpense/>
+      <NewExpense addExpense={addExpenseHandler} />
       <div>
         {/*  Dynamic value passing into component */}
         {expences?.map((expence) => (
