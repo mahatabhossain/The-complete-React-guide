@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-// import Expenses from "./components/Expenses";
-import NewExpense from "./components/NewExpense";
-import Filter from "./components/Filter";
-import ExpenseItem from "./components/ExpenseItem";
-import "./style/filter.css";
+import ExpenseItem from "./ExpenseItem";
+
 const INITIAL_DATA = [
   {
     id: "e1",
@@ -31,8 +28,9 @@ const INITIAL_DATA = [
   },
 ];
 
-const App = () => {
+const Expenses = () => {
   const [expenses, setExpenses] = useState(INITIAL_DATA);
+
   const addExpenseHandler = (expense) => {
     setExpenses((previousExpense) => {
       return [expense, ...previousExpense];
@@ -42,30 +40,23 @@ const App = () => {
   };
   return (
     <div>
-      <h1>The Complete React Guide</h1>
-
-      <NewExpense addExpense={addExpenseHandler} />
-      <Filter />
-      <div>
-        {" "}
-        {/*  Dynamic value passing into component */}
-        {expenses?.map((expence) => (
-          <ExpenseItem
-            key={expence.id}
-            title={expence.title}
-            amount={expence.amount}
-            date={expence.date}
-          />
-        ))}
-        {/* Hard coded value passing into component */}
-        {/* <TestProps
+      {" "}
+      {/*  Dynamic value passing into component */}
+      {expenses?.map((expence) => (
+        <ExpenseItem
+          title={expence.title}
+          amount={expence.amount}
+          date={expence.date}
+        />
+      ))}
+      {/* Hard coded value passing into component */}
+      {/* <TestProps
     title="Hand wash"
     amount=300
     date="2022-02-03"
   /> */}
-      </div>
     </div>
   );
 };
 
-export default App;
+export default Expenses;

@@ -1,0 +1,20 @@
+.filter_by_date {
+  display: flex;
+  justify-content: space-between;
+  background-color: gray;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  padding: 0 1rem 0 1rem;
+}
+
+h1 {
+  text-align: center;
+  background-color: rgba(55, 42, 42, 0.907);
+  color: white;
+}
+
+select {
+  border-radius: 10px;
+  height: 2.5rem;
+  margin-top: 5px;
+}
