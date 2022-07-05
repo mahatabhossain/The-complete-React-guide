@@ -1,17 +1,23 @@
-import React from "react";
-import ExpenseDate from "./ExpenseDate";
-import "../style/ExpenceStyle.css";
+import React, { useState } from "react";
+import "../styles/ExpenseItem.css";
 import Card from "./Card";
+import ExpenseDate from "./ExpenseDate";
 
-const ExpenseItem = ({ date, title, amount }) => {
+const ExpenseItem = (props) => {
+  const [title, setTitle] = useState(props.title);
+
+  const clickHandler = (event) => {
+    setTitle("State updated");
+  };
+
   return (
-    <Card className="expence_container">
-      <ExpenseDate date={date} />
-
-      <div className="expence_items">
-        <div className="expence_name">{title}</div>
+    <Card className="expense-item">
+      <ExpenseDate date={props.date} />
+      <div className="expense-item__description">
+        <h2>{title}</h2>
+        <div className="expense-item__price">${props.amount}</div>
       </div>
-      <div className="expence_amount">$ {amount}</div>
+      <button onClick={clickHandler}>Change Title</button>
     </Card>
   );
 };

@@ -1,9 +1,9 @@
 import React from "react";
-import "../style/filter.css";
+import "../styles/FilterExpense.css";
 
-const Filter = () => {
+const FilterExpense = () => {
   return (
-    <div className="filter_by_date">
+    <div className="filter_container">
       <p>Filter</p>
       <select>
         <option>Select year</option>
@@ -15,4 +15,4 @@ const Filter = () => {
   );
 };
 
-export default Filter;
+export default FilterExpense;

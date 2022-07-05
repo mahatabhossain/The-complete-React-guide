@@ -1,10 +1,9 @@
-import React from 'react'
-import './../style/card.css'
+import React from "react";
+import "../styles/Card.css";
 
 const Card = (props) => {
-  return (
-    <div className='card'>{props.children}</div>
-  )
-}
+  //   const classes = "card" + props.className;
+  return <div className="card expense-item">{props.children}</div>;
+};
 
-export default Card
+export default Card;

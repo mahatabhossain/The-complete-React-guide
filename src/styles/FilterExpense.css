@@ -1,0 +1,13 @@
+.filter_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem 0 1rem;
+  background-color: #4c4a4f;
+  border-radius: 10px;
+  color: white;
+  font-weight: 800;
+}
+select {
+  border-radius: 12px;
+  outline: none;
+}

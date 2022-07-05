@@ -1,69 +1,44 @@
 import React, { useState } from "react";
-// import Expenses from "./components/Expenses";
+import Expenses from "./components/Expenses";
+import FilterExpense from "./components/FilterExpense";
 import NewExpense from "./components/NewExpense";
-import Filter from "./components/Filter";
-import ExpenseItem from "./components/ExpenseItem";
-import "./style/filter.css";
-const INITIAL_DATA = [
+
+const INTITIAL_DATA = [
   {
     id: "e1",
-    title: "Toilet paper",
-    amount: "94.12",
-    date: new Date(2021, 3, 15),
+    title: "Toilet Paper",
+    amount: 94.12,
+    date: new Date(2020, 7, 14),
   },
-  {
-    id: "e2",
-    title: "Bedsheet",
-    amount: "80.12",
-    date: new Date(2021, 5, 15),
-  },
+  { id: "e2", title: "New TV", amount: 799.49, date: new Date(2021, 2, 12) },
   {
     id: "e3",
-    title: "Brush",
-    amount: "44.12",
-    date: new Date(2021, 7, 15),
+    title: "Car Insurance",
+    amount: 294.67,
+    date: new Date(2021, 2, 28),
   },
   {
     id: "e4",
-    title: "Pillow",
-    amount: "4.12",
-    date: new Date(2021, 9, 15),
+    title: "New Desk (Wooden)",
+    amount: 450,
+    date: new Date(2021, 5, 12),
   },
 ];
 
 const App = () => {
-  const [expenses, setExpenses] = useState(INITIAL_DATA);
+  const [expenses, setExpenses] = useState(INTITIAL_DATA);
+
   const addExpenseHandler = (expense) => {
-    setExpenses((previousExpense) => {
-      return [expense, ...previousExpense];
+    setExpenses((prevExpenses) => {
+      return [expense, ...prevExpenses];
     });
-    console.log("In App.js");
-    console.log(expense);
   };
+
   return (
     <div>
-      <h1>The Complete React Guide</h1>
-
-      <NewExpense addExpense={addExpenseHandler} />
-      <Filter />
-      <div>
-        {" "}
-        {/*  Dynamic value passing into component */}
-        {expenses?.map((expence) => (
-          <ExpenseItem
-            key={expence.id}
-            title={expence.title}
-            amount={expence.amount}
-            date={expence.date}
-          />
-        ))}
-        {/* Hard coded value passing into component */}
-        {/* <TestProps
-    title="Hand wash"
-    amount=300
-    date="2022-02-03"
-  /> */}
-      </div>
+      <NewExpense onAddExpense={addExpenseHandler} />
+      <FilterExpense />
+      <Expenses item={expenses} />
     </div>
   );
 };

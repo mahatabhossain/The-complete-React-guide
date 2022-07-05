@@ -1,20 +1,19 @@
 import React from "react";
+import "../styles/NewExpense.css";
 import ExpenseForm from "./ExpenseForm";
 
 const NewExpense = (props) => {
-  //CHILD PARENT COMPONENT COMMUNICATION(chile -> parent)
-  const expenseDataHandler = (dataFromExpeneForm) => {
-    const newExpenseData = {
-      ...dataFromExpeneForm,
+  const saveExpenseDataHandler = (expenseFormData) => {
+    const formExpenseData = {
+      ...expenseFormData,
       id: Math.random().toString(),
     };
-    // console.log(newExpenseData);
-    props.addExpense(newExpenseData);
+    props.onAddExpense(formExpenseData);
   };
 
   return (
-    <div>
-      <ExpenseForm submitExpenseData={expenseDataHandler} />
+    <div className="new-expense">
+      <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
     </div>
   );
 };
